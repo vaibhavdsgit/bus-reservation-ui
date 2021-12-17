@@ -23,7 +23,7 @@ const updateEmpService = (emp) => {
 
 const deleteEmpService = (eid) => {
     console.log(`getEmpByIdService`);
-    return axios.post(`/emp/deleteempbyid${eid}`);
+    return axios.post(`/emp/deleteempbyid/${eid}`);
 }
 
 const getEmpByNameService = (firstName) => {
