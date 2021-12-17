@@ -39,4 +39,8 @@ const BusSlice = createSlice({
             state.empState = action.payload;
         },
     }
-})
+});
+
+export const{addBus, updateBus, deleteBus, viewBus, viewBusByType, viewAllBus} = BusSlice.actions;
+
+export default BusSlice.reducer;
