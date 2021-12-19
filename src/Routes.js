@@ -11,6 +11,8 @@ import Logout from './components/Logout';
 import Page404 from './components/Page404';
 import Register from "./components/Register";
 import AdminUser from './components/AdminUser';
+import BusData from './components/BusData';
+import ReservationData from './components/ReservationData';
 
 
 const Routes = () => {
@@ -33,6 +35,8 @@ const Routes = () => {
                                 <Route path="/home" loginStatus> <Home /> </Route>
                                 <Route path="/hello"> <Hello /> </Route>
                                 <Route path="/emp"> <EmpData /> </Route>
+                                <Route path="/bus"> <BusData /> </Route>
+                                <Route path="/reservation"> <ReservationData /> </Route>
                                 <Route path="/spring"> <SpringBootData /> </Route>
                                 <Route path="/logout"> <Logout /> </Route>
                                 <Route path="/adminUser"> <AdminUser /> </Route>

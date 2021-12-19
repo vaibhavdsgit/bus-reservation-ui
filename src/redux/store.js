@@ -1,5 +1,7 @@
 import empReducer from './EmpSlice';
 import depReducer from './DepSlice';
+import busReducer from './BusSlice';
+import reservationReducer from './ReservationSlice';
 
 // steps - 
 // 1. create store - only one 
@@ -18,7 +20,9 @@ const store = configureStore(
     {
         reducer: {
             emp: empReducer,
-            dep: depReducer
+            dep: depReducer,
+            bus: busReducer,
+            reservation: reservationReducer
             // ,
             // anotherComponent: anotherComponentReducer
         }

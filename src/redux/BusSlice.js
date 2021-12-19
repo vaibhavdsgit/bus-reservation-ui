@@ -11,36 +11,36 @@ const BusSlice = createSlice({
     reducers: {
         addBus: (state, action) => {
             console.log('BusSlice reducers addBus');
-            state.empState = action.payload;
+            state.busState = action.payload;
         },
         
         updateBus: (state, action) => {
             console.log('BusSlice reducers updateBus');
-            state.empState = action.payload;
+            state.busState = action.payload;
         },
 
         deleteBus: (state, action) => {
             console.log('BusSlice reducers deleteBus');
-            state.empState = action.payload;
+            state.busState = action.payload;
         },
 
         viewBus: (state, action) => {
             console.log('BusSlice reducers viewBus');
-            state.empState = action.payload;
+            state.busState = action.payload;
         },
 
         viewBusByType: (state, action) => {
             console.log('BusSlice reducers viewBusByType');
-            state.empState = action.payload;
+            state.busState = action.payload;
         },
 
         viewAllBus: (state, action) => {
             console.log('BusSlice reducers viewAllBus');
-            state.empState = action.payload;
-        },
+            state.busList = action.payload;
+        }
     }
 });
 
-export const{addBus, updateBus, deleteBus, viewBus, viewBusByType, viewAllBus} = BusSlice.actions;
+export const {addBus, updateBus, deleteBus, viewBus, viewBusByType, viewAllBus} = BusSlice.actions;
 
 export default BusSlice.reducer;

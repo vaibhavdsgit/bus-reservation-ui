@@ -14,15 +14,15 @@ const deleteBusService = (busId) => {
 }
 const viewBusService = (busId) => {
     console.log(`viewBusService`);
-    return axios.post(`/viewBus/${busId}`);
+    return axios.get(`/viewBus/${busId}`);
 }
 const viewBusByTypeService = (busType) => {
     console.log(`updateBusService`);
-    return axios.post(`/viewBusByType/${busType}`);
+    return axios.get(`/viewBusByType/${busType}`);
 }
 const viewAllBusService = () => {
-    console.log(`addBusService`);
-    return axios.post(`/viewAllBus`);
+    console.log(`viewAllBusService`);
+    return axios.get(`/viewAllBuses`);
 }
 
 export {addBusService, updateBusService, deleteBusService, viewBusService, viewBusByTypeService, viewAllBusService};

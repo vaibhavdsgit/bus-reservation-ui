@@ -1,7 +1,6 @@
 import { addBusService, updateBusService, deleteBusService, viewBusService, viewBusByTypeService, viewAllBusService} from "./services/BusService";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-
 import {addBus,  updateBus, deleteBus, viewBus, viewBusByType, viewAllBus} from '../redux/BusSlice';
 
 const BusData = () => {

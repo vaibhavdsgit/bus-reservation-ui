@@ -4,20 +4,15 @@ import Employee from "../components/models/Employee";
 
 // step 3 for redux - create slices for each components 
 const EmpSlice = createSlice({
-
     name: 'emp',
-
     initialState: {
         // empState: {
         //     eid: 101,
         //     firstName: 'Sonu',
         //     salary: 10.5
         // }
-
         empState: new Employee(),
         empList: []
-
-
     },
 
     reducers: {

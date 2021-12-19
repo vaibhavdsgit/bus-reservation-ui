@@ -69,6 +69,46 @@ const Register = (props) => {
                             </select>
                         </div> */}
                         <input
+                            type="text"
+                            className="form-control"
+                            name="firstName"
+                            id="firstName"
+                            className="form-control mb-3"
+                            placeholder="Enter FirstName"
+                            value={appUser.firstName}
+                            onChange={handleAppUser} />
+
+                            <input
+                            type="text"
+                            className="form-control"
+                            name="lastName"
+                            id="lasttName"
+                            className="form-control mb-3"
+                            placeholder="Enter lasttName"
+                            value={appUser.lastName}
+                            onChange={handleAppUser} />
+
+                        <input
+                            type="number"
+                            className="form-control"
+                            name="contact"
+                            id="contact"
+                            className="form-control mb-3"
+                            placeholder="Enter Contact Number"
+                            value={appUser.contact}
+                            onChange={handleAppUser} />
+
+
+                        <input
+                            type="text"
+                            className="form-control"
+                            name="mail"
+                            id="mail"
+                            className="form-control mb-3"
+                            placeholder="Enter mail"
+                            value={appUser.mail}
+                            onChange={handleAppUser} />
+                        <input
                             type="submit"
                             id="submit"
                             name="submit"
@@ -76,6 +116,7 @@ const Register = (props) => {
                             value="Register"
                             onClick={submitAppUser}
                         />
+
                     </div>
                 </form>
                 <p className="text-danger">{credentials}</p>
