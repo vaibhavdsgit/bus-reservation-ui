@@ -10,9 +10,9 @@ import Login from "./components/Login";
 import Logout from './components/Logout';
 import Page404 from './components/Page404';
 import Register from "./components/Register";
-import AdminUser from './components/AdminUser';
 import BusData from './components/BusData';
 import ReservationData from './components/ReservationData';
+import AdminLogin from './components/AdminLogin';
 
 
 const Routes = () => {
@@ -39,7 +39,7 @@ const Routes = () => {
                                 <Route path="/reservation"> <ReservationData /> </Route>
                                 <Route path="/spring"> <SpringBootData /> </Route>
                                 <Route path="/logout"> <Logout /> </Route>
-                                <Route path="/adminUser"> <AdminUser /> </Route>
+                                {/* <Route path="/adminUser"> <AdminUser /> </Route> */}
                                 <Route path="/*"> <Page404 /> </Route>
                                 
                             </Switch>
@@ -62,8 +62,10 @@ const Routes = () => {
                                 <Route path="/home" loginStatus> <Home /> </Route>
                                 <Route path="/register"> <Register /> </Route>
                                 <Route path="/login"> <Login /> </Route>
-                                <Route path="/adminUser"> <AdminUser /> </Route>
+                                {/* <Route path="/adminUser"> <AdminUser /> </Route> */}
+                                <Route path="/adminLogin"> <AdminLogin /> </Route>
                                 <Route path="/*"> <Page404 /> </Route>
+        
                                 
                             </Switch>
                         </div>

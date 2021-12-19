@@ -47,22 +47,22 @@ const Login = () => {
             });
         event.preventDefault();
     }
-    const submitAdmin = (event) => {
-        axios.post(`http://localhost:8082/loginAdmin`, admin)
-            .then((response) => {
-                console.log(response.data);
-                sessionStorage.setItem('isAdminLoggedIn', true);
-                alert('Success');
-                window.location.assign('/home');
-                // history.push('/home');
-            }).catch((error) => {
-                sessionStorage.setItem('isAdminLoggedIn', false);
-                sessionStorage.clear();
-                console.log(error.response);
-                setCredentials("Enter proper credentials.");
-            });
-        event.preventDefault();
-    }
+    // const submitAdmin = (event) => {
+    //     axios.post(`http://localhost:8082/loginAdmin`, admin)
+    //         .then((response) => {
+    //             console.log(response.data);
+    //             sessionStorage.setItem('isAdminLoggedIn', true);
+    //             alert('Success');
+    //             window.location.assign('/home');
+    //             // history.push('/home');
+    //         }).catch((error) => {
+    //             sessionStorage.setItem('isAdminLoggedIn', false);
+    //             sessionStorage.clear();
+    //             console.log(error.response);
+    //             setCredentials("Enter proper credentials.");
+    //         });
+    //     event.preventDefault();
+    // }
     return (
         <div className="container"
         style={{
@@ -109,7 +109,7 @@ const Login = () => {
                             value="Login As User"
                             onClick={submitUser}
                         />
-                        <Link to="/adminUser" className="btn btn-danger col-12">Login as Admin</Link>
+                        <Link to="/adminLogin" className="btn btn-danger col-12">Login as Admin</Link>
                     </div>
                 </form>
                 <p className="text-danger">{credentials}</p>
