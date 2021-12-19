@@ -13,6 +13,7 @@ import Register from "./components/Register";
 import BusData from './components/BusData';
 import ReservationData from './components/ReservationData';
 import AdminLogin from './components/AdminLogin';
+import Feedback from './components/models/Feedback';
 
 
 const Routes = () => {
@@ -39,6 +40,7 @@ const Routes = () => {
                                 <Route path="/reservation"> <ReservationData /> </Route>
                                 <Route path="/spring"> <SpringBootData /> </Route>
                                 <Route path="/logout"> <Logout /> </Route>
+                                <Route path="/feedback"> <Feedback /> </Route>
                                 {/* <Route path="/adminUser"> <AdminUser /> </Route> */}
                                 <Route path="/*"> <Page404 /> </Route>
                                 

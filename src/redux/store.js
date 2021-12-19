@@ -2,7 +2,8 @@ import empReducer from './EmpSlice';
 import depReducer from './DepSlice';
 import busReducer from './BusSlice';
 import reservationReducer from './ReservationSlice';
-import adminReducer from './AdminSlice'
+import adminReducer from './AdminSlice';
+import feedbackReducer from './FeedbackSlice';
 
 // steps - 
 // 1. create store - only one 
@@ -24,7 +25,8 @@ const store = configureStore(
             dep: depReducer,
             bus: busReducer,
             reservation: reservationReducer,
-            admin: adminReducer
+            admin: adminReducer,
+            feedback: feedbackReducer
             // ,
             // anotherComponent: anotherComponentReducer
         }

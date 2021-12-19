@@ -13,22 +13,39 @@ const ReservationData = () => {
     const reservationDataFromStore = useSelector((state) => state.reservation.reservationState);
     const reservationList = useSelector((state) => state.reservation.reservationList);
 
-    // const handleReservation = (e) => {
-    //     console.log('handleEmp');
-    //     setRid(e.target.value);
-    // }
+    const handleReservation1 = (e1) => {
+        console.log('handleReservation1');
+        setReservationId(e1.target.value);
+    }
 
-    // const submitViewReservation = (evt) => {
-    //     evt.preventDefault();
-    //     console.log('submitGetEmpById');
-    //     viewReservationService(reservationId)
-    //         .then((response) => { dispatch(getReservationById(response.data)) })
-    //         .catch(() => {
-    //             alert(`Reservation with ${eid} not found.`);
-    //         });
-    //     console.log(Object.keys(reservationList));
-    //     setRid('');
-    // }
+    const handleReservation2 = (e2) => {
+        console.log('handleReservation2');
+        setReservationId(e2.target.value);
+    }
+
+    const submitViewReservation = (evt) => {
+        evt.preventDefault();
+        console.log('submitViewReservation');
+        viewReservationService(reservationId)
+            .then((response) => { dispatch(viewReservation(response.data)) })
+            .catch(() => {
+                alert(`Reservation with ${reservationId} not found.`);
+            });
+        // console.log(Object.keys(reservationList));
+        setReservationId('');
+    }
+
+    const submitDeleteReservation = (evt) => {
+        evt.preventDefault();
+        console.log('submitDeleteReservation');
+        deleteReservationService(reservationId)
+            .then((response) => { dispatch(deleteReservation(response.data)) })
+            .catch(() => {
+                alert(`Reservation with ${reservationId} not found.`);
+            });
+        // console.log(Object.keys(reservationList));
+        setReservationId('');
+    }
 
     const submitViewAllReservation = (evt) => {
         evt.preventDefault();
@@ -47,14 +64,23 @@ const ReservationData = () => {
             <h1 className="display-4 text-primary mt-3 mb-3" >Ticket Booking...</h1>
             
 
-            {/* <div className="col-4 border border-light shadow p-3 mb-5 bg-white">
+            <div className="col-10 border border-light shadow p-3 mb-5 bg-white">
                 <p>Find reservation by id</p>
                 <form className="form form-group form-primary" onSubmit={submitViewReservation}>
-                    <input className="form-control mt-3" type="number" id="reservationId" name="reservationId" value={reservationId} onChange={handleReservation} placeholder="Enter reservationid to search" autoFocus required />
+                    <input className="form-control mt-3" type="number" id="reservationId" name="reservationId" value={reservationId} onChange={handleReservation1} placeholder="Enter reservationid to search" autoFocus  />
                     <input className="form-control mt-3 btn btn-primary" type="submit" value="Find Reservation" />
                 </form>
                 <p>Data from store: {reservationDataFromStore.reservationId} {reservationDataFromStore.reservationStatus} {reservationDataFromStore.reservationDate}{reservationDataFromStore.reservationTime} {reservationDataFromStore.source} {reservationDataFromStore.destination}</p>
-            </div> */}
+            </div>
+
+            <div className="col-10 border border-light shadow p-3 mb-5 bg-white">
+                <p>Delete reservation by id</p>
+                <form className="form form-group form-primary" onSubmit={submitDeleteReservation}>
+                    <input className="form-control mt-3" type="number" id="reservationId" name="reservationId" value={reservationId} onChange={handleReservation2} placeholder="Enter reservationid to delete" required />
+                    <input className="form-control mt-3 btn btn-primary" type="submit" value="Delete Reservation" />
+                </form>
+                <p>Data from store: {reservationDataFromStore.reservationId} {reservationDataFromStore.reservationStatus} {reservationDataFromStore.reservationDate}{reservationDataFromStore.reservationTime} {reservationDataFromStore.source} {reservationDataFromStore.destination}</p>
+            </div>
 
             <div>
                 <div className="col-8.5 border border-light shadow p-3 mb-5 bg-white">
