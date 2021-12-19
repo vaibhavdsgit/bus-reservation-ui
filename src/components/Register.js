@@ -35,7 +35,13 @@ const Register = (props) => {
         event.preventDefault();
     }
     return (
-        <div className="container">
+        <div className="container"
+        style={{
+            backgroundImage: `url("https://ideausher.com/wp-content/uploads/2021/03/Instagram-Post-%E2%80%93-2-1.png")`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            
+        }}>
             <div className="col-4 mt-4" >
                 <h1 className="display-4 text-danger">Register</h1>
                 <form className="form form-group form-dark " onSubmit={submitAppUser}>

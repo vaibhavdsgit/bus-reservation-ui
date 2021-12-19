@@ -15,7 +15,7 @@ const Header = () => {
                 <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-danger text-white">
                     <div class="container">
                         <Link className="navbar-brand" to="/">
-                        <img src="https://img.icons8.com/external-itim2101-fill-itim2101/64/000000/external-bus-car-itim2101-fill-itim2101.png"/>
+                        <img src="https://img.icons8.com/external-inipagistudio-mixed-inipagistudio/64/000000/external-bus-urban-infrastructure-inipagistudio-mixed-inipagistudio.png"/>
                         </Link>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                             <span class="navbar-toggler-icon"></span>
@@ -56,7 +56,7 @@ const Header = () => {
                 <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-danger text-white">
                     <div class="container">
                         <Link className="navbar-brand" to="/">
-                        <img src="https://img.icons8.com/external-itim2101-fill-itim2101/64/000000/external-bus-car-itim2101-fill-itim2101.png"/>
+                        <img src="https://img.icons8.com/external-inipagistudio-mixed-inipagistudio/64/000000/external-bus-urban-infrastructure-inipagistudio-mixed-inipagistudio.png"/>
                         </Link>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                             <span class="navbar-toggler-icon"></span>

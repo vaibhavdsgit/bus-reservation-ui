@@ -64,8 +64,16 @@ const Login = () => {
         event.preventDefault();
     }
     return (
-        <div className="container">
+        <div className="container"
+        style={{
+            backgroundImage: `url("https://ideausher.com/wp-content/uploads/2021/03/Instagram-Post-%E2%80%93-2-1.png")`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            
+        }}>
+            
             <div className="col-4 mt-3" >
+            <br/>
                 <h1 className="display-4 text-danger">Login</h1>
                 <form className="form form-group form-dark ">
                     <div>
@@ -107,6 +115,13 @@ const Login = () => {
                 <p className="text-danger">{credentials}</p>
                 
                 <Link to="/register" className="btn btn-danger col-12">Not yet registered? Register</Link>
+                
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
                 
             </div>
         </div >

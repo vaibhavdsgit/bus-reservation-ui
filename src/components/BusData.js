@@ -39,7 +39,7 @@ const BusData = () => {
             <p>Fetch data from backend, store it in redux store and get it to component</p>
 
             <div>
-                <div className="col-4 border border-light shadow p-3 mb-5 bg-white">
+                <div className="col-12 border border-light shadow p-3 mb-5 bg-white">
                     <p>Find all buses</p>
                     <div>
                         <form className="form form-group form-primary">

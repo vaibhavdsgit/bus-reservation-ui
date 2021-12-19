@@ -57,7 +57,7 @@ const ReservationData = () => {
             </div> */}
 
             <div>
-                <div className="col-4 border border-light shadow p-3 mb-5 bg-white">
+                <div className="col-8.5 border border-light shadow p-3 mb-5 bg-white">
                     <p>Find all reservation</p>
                     <div>
                         <form className="form form-group form-primary">

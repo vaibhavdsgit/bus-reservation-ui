@@ -11,8 +11,7 @@ const Home = () => {
             <div className="container"
                 style={{ height: '700px' }}
             >
-                <h1 className="fw-bolder" >WELCOME TO ONLINE RESERVATION.....</h1>
-                
+                <marquee ><h1 className="fw-bolder" >WELCOME TO ONLINE RESERVATION.....</h1></marquee>
             </div>
 
             {/* <div >
