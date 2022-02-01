@@ -9,6 +9,13 @@ const Header = () => {
         setLoginStatus(sessionStorage.getItem('isUserLoggedIn'));
     }, []);
 
+    // let [adminLoginStatus, setAdminLoginStatus] = useState(false);
+    // console.log(sessionStorage.getItem('isAdminLoggedIn'));
+    // useEffect(() => {
+    //     setAdminLoginStatus(sessionStorage.getItem('isAdminLoggedIn'));
+    //     console.log(sessionStorage.getItem('isAdminLoggedIn'));
+    // }, []);
+
     if (loginStatus) {
         return (
             <header class="header sticky-top">
@@ -22,15 +29,8 @@ const Header = () => {
                         </button>
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav ml-auto">
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/hello" >Hello</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/emp" >Service</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/spring" >Spring</Link>
-                                </li>
+                            
+                                
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/bus" >BusData</Link>
                                 </li>
@@ -38,11 +38,14 @@ const Header = () => {
                                     <Link className="nav-link" to="/reservation" >ReservationData</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/feedback" >Feedback</Link>
+                                    <Link className="nav-link" to="/route" >Route</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" >Help</Link>
+                                    <Link className="nav-link" to="/feedback" >Feedback</Link>
                                 </li>
+                                {/* <li className="nav-item">
+                                    <Link className="nav-link" >Help</Link>
+                                </li> */}
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/logout" >Logout</Link>
                                 </li>
@@ -53,6 +56,7 @@ const Header = () => {
             </header>
         );
     }
+    
     else {
         return (
             <header class="header sticky-top">
@@ -69,7 +73,7 @@ const Header = () => {
 
                                 <li className="nav-item">
                                 <img src="https://img.icons8.com/external-glyph-geotatah/64/000000/external-register-training-management-system-glyph-glyph-geotatah.png"/>
-                                    <Link className="nav-link" to="/register" >Register</Link>
+                                    <Link className="nav-link" to="/addUser" >AddUser</Link>
                                 </li>
                                 <li className="nav-item">
                                 <img src="https://img.icons8.com/external-flatart-icons-solid-flatarticons/64/000000/external-login-web-security-flatart-icons-solid-flatarticons.png"/>

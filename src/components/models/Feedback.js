@@ -1,9 +1,9 @@
 class Feedback {
-    feedbackId;
-    driverRating;
-    serviceRating;
-    overallRating;
-    comment;
-    feedbackdate;
-  }
-  export default Feedback;
+  feedBackId;
+  driverRating;
+  serviceRating;
+  overallRating;
+  comment;
+  feedBackDate;
+}
+export default Feedback;

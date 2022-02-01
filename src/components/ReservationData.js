@@ -2,12 +2,14 @@ import { viewReservationService, viewAllReservationService, addReservationServic
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import {  viewReservation,deleteReservation,updateReservation,addReservation,viewAllReservation} from '../redux/ReservationSlice';
-
-import { Store } from "redux";
-import { Provider } from "react";
+import Reservation from './models/Reservation';
+import axios from "axios";
 
 const ReservationData = () => {
 
+
+    const [newReservationObj, setNewReservationObj] = useState(new Reservation());
+    const [displayReservationObj, setDisplayReservationObj] = useState(new Reservation());
     const [reservationId, setReservationId] = useState('');
     const dispatch = useDispatch();
     const reservationDataFromStore = useSelector((state) => state.reservation.reservationState);
@@ -18,9 +20,32 @@ const ReservationData = () => {
         setReservationId(e1.target.value);
     }
 
+    const handleAddReservation = (e) => {
+        console.log(e.target.value);
+        setNewReservationObj({
+            ...newReservationObj,
+            [e.target.name]: e.target.value,
+        });
+    }
+
     const handleReservation2 = (e2) => {
         console.log('handleReservation2');
         setReservationId(e2.target.value);
+    }
+
+    const submitAddReservation = (evt) => {
+        evt.preventDefault();
+        console.log('addReservations');
+        axios.post(`/addReservation`, newReservationObj)
+            .then((response) => {
+                setDisplayReservationObj(response.data);
+                alert('Reservation added successfully.');
+                setNewReservationObj({ reservationId: '', reservationStatus: '', reservationType: '', reservationDate: '', reservationTime: '', source: '', destination: '' })
+
+            })
+            .catch(() => {
+                alert("Reservation could not be added.");
+            });
     }
 
     const submitViewReservation = (evt) => {
@@ -63,6 +88,50 @@ const ReservationData = () => {
         <div className="container">
             <h1 className="display-4 text-primary mt-3 mb-3" >Ticket Booking...</h1>
             
+            <div className="col-10 border border-light shadow p-3 mb-5 bg">
+
+            <h2 className="display-5 text mt-3 mb-3">Add New Reservation</h2>
+            <div id="addNewReservationDiv">
+                <input className="form-control mt-3"
+                    type="text"
+                    id="reservationStatus"
+                    name="reservationStatus"
+                    value={newReservationObj.reservationStatus}
+                    onChange={handleAddReservation}
+                    placeholder="Enter reservation status"
+                   />
+                <input className="form-control mt-3"
+                    type="text"
+                    id="reservationType"
+                    name="reservationType"
+                    value={newReservationObj.reservationType}
+                    onChange={handleAddReservation}
+                    placeholder="Enter reservation type"
+                   />
+                <input className="form-control mt-3"
+                    type="source"
+                    id="source"
+                    name="source"
+                    value={newReservationObj.source}
+                    onChange={handleAddReservation}
+                    placeholder="Enter reservation source"
+                    />
+                <input className="form-control mt-3"
+                    type="destination"
+                    id="destination"
+                    name="destination"
+                    value={newReservationObj.destination}
+                    onChange={handleAddReservation}
+                    placeholder="Enter reservation destination"
+                    />
+                
+                <input className="mt-3 btn btn-primary btn-block"
+                    type="submit"
+                    value="Add Reservation"
+                    onClick={submitAddReservation}
+                />
+            </div>
+            <br />
 
             <div className="col-10 border border-light shadow p-3 mb-5 bg-white">
                 <p>Find reservation by id</p>
@@ -111,11 +180,7 @@ const ReservationData = () => {
                     </table>
                 </div>
             </div>
-
-           
-
-
-
+            </div>
         </div>
     );
 }

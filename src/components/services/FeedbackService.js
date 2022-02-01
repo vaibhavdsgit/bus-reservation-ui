@@ -1,27 +1,26 @@
 import axios from "axios";
 
-const addFeedbackService = (emp) => {
-  console.log(`addFeedbackService`);
-  return axios.post(`/addfeedback`, emp);
+const addFeedbackService = (feedBack) => {
+  console.log(`addFeebackService`);
+  return axios.post(`/addFeedBack`, feedBack);
 };
-
-const updateFeedbackService = (emp) => {
+const updateFeedbackService = (feedBack) => {
   console.log(`updateFeedbackService`);
-  return axios.post(`/updateFeedback`, emp);
+  return axios.post(`/updateFeedBack`, feedBack);
 };
-
-const deleteFeedbackService = (eid) => {
+const deleteFeedbackService = (feedBackId) => {
   console.log(`deleteFeedbackService`);
-  return axios.post(`/deleteFeedback/${eid}`);
+  return axios.delete(`/deleteFeedBack/${feedBackId}`);
 };
-const viewFeedbackService = (eid) => {
-  console.log(`getEmpByIdService`);
-  return axios.get(`/viewFeedback/${eid}`);
+const viewFeedbackService = (feedBackId) => {
+  console.log(`viewBusByTypeService`);
+  return axios.get(`/viewFeedBack/${feedBackId}`);
 };
 const viewAllFeedbackService = () => {
   console.log(`viewAllFeedbackService`);
-  return axios.get(`/viewAllFeedback`);
+  return axios.get(`/viewAllFeedBack`);
 };
+
 export {
   addFeedbackService,
   updateFeedbackService,

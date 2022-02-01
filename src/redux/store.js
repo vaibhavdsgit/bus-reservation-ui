@@ -4,6 +4,8 @@ import busReducer from './BusSlice';
 import reservationReducer from './ReservationSlice';
 import adminReducer from './AdminSlice';
 import feedbackReducer from './FeedbackSlice';
+import userReducer from './UserSlice';
+import routeReducer from './RouteSlice'
 
 // steps - 
 // 1. create store - only one 
@@ -12,6 +14,7 @@ import feedbackReducer from './FeedbackSlice';
 // 4. use slices in components 
 
 import { configureStore } from "@reduxjs/toolkit";
+import { useReducer } from 'react';
 
 // note - redux store can be created in multiple different ways. 
 // latest way 
@@ -26,7 +29,9 @@ const store = configureStore(
             bus: busReducer,
             reservation: reservationReducer,
             admin: adminReducer,
-            feedback: feedbackReducer
+            feedback: feedbackReducer,
+            user: userReducer,
+            route: routeReducer
             // ,
             // anotherComponent: anotherComponentReducer
         }

@@ -1,9 +1,11 @@
-class User{
+class User {
+    userId;
     userName;
     password;
     firstName;
     lastName;
     contact;
     email;
-}
-export default User;
+ }
+ 
+ export default User;

@@ -9,11 +9,12 @@ import Home from './components/Home';
 import Login from "./components/Login";
 import Logout from './components/Logout';
 import Page404 from './components/Page404';
-import Register from "./components/Register";
+import AddUser from "./components/AddUser";
 import BusData from './components/BusData';
 import ReservationData from './components/ReservationData';
 import AdminLogin from './components/AdminLogin';
-import Feedback from './components/models/Feedback';
+import FeedbackData from './components/FeedbackData';
+import RouteData from './components/RouteData';
 
 
 const Routes = () => {
@@ -38,9 +39,10 @@ const Routes = () => {
                                 <Route path="/emp"> <EmpData /> </Route>
                                 <Route path="/bus"> <BusData /> </Route>
                                 <Route path="/reservation"> <ReservationData /> </Route>
+                                <Route path="/route"> <RouteData /> </Route>
                                 <Route path="/spring"> <SpringBootData /> </Route>
                                 <Route path="/logout"> <Logout /> </Route>
-                                <Route path="/feedback"> <Feedback /> </Route>
+                                <Route path="/feedback"> <FeedbackData /> </Route>
                                 {/* <Route path="/adminUser"> <AdminUser /> </Route> */}
                                 <Route path="/*"> <Page404 /> </Route>
                                 
@@ -62,7 +64,7 @@ const Routes = () => {
                             <Switch>
                                 <Route exact path="/" loginStatus > <Home /> </Route>
                                 <Route path="/home" loginStatus> <Home /> </Route>
-                                <Route path="/register"> <Register /> </Route>
+                                <Route path="/addUser"> <AddUser /> </Route>
                                 <Route path="/login"> <Login /> </Route>
                                 {/* <Route path="/adminUser"> <AdminUser /> </Route> */}
                                 <Route path="/adminLogin"> <AdminLogin /> </Route>

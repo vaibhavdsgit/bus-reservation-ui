@@ -21,12 +21,11 @@ const AdminLogin = () => {
         axios.post(`http://localhost:8082/loginAdmin`, admin)
             .then((response) => {
                 console.log(response.data);
-                sessionStorage.setItem('isUserLoggedIn', true);
                 alert('Success');
+                sessionStorage.setItem('isAdminLoggedIn', true);
                 window.location.assign('/home');
                 // history.push('/home');
             }).catch((error) => {
-                sessionStorage.setItem('isUserLoggedIn', false);
                 sessionStorage.clear();
                 console.log(error.response);
                 setCredentials("Enter proper credentials.");

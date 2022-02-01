@@ -5,7 +5,7 @@ const feedbackSlice = createSlice({
   name: "feedback",
   initialState: {
     feedbackState: new Feedback(),
-    feedbackList: []
+    feedbackList: [],
   },
 
   reducers: {

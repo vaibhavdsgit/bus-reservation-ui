@@ -11,7 +11,6 @@ const Login = () => {
     // const history = useHistory();
 
     const [user, setUser] = useState(new User());
-    const [admin, setAdmin] = useState(new Admin());
     const [credentials, setCredentials] = useState('');
 
     const handleUser = (event) => {
@@ -19,14 +18,6 @@ const Login = () => {
         console.log(event.target.value);
         setUser({
             ...user,
-            [event.target.name]: event.target.value
-        });
-    };
-    const handleAdmin = (event) => {
-        console.log(event.target.name);
-        console.log(event.target.value);
-        setUser({
-            ...admin,
             [event.target.name]: event.target.value
         });
     };
@@ -47,22 +38,6 @@ const Login = () => {
             });
         event.preventDefault();
     }
-    // const submitAdmin = (event) => {
-    //     axios.post(`http://localhost:8082/loginAdmin`, admin)
-    //         .then((response) => {
-    //             console.log(response.data);
-    //             sessionStorage.setItem('isAdminLoggedIn', true);
-    //             alert('Success');
-    //             window.location.assign('/home');
-    //             // history.push('/home');
-    //         }).catch((error) => {
-    //             sessionStorage.setItem('isAdminLoggedIn', false);
-    //             sessionStorage.clear();
-    //             console.log(error.response);
-    //             setCredentials("Enter proper credentials.");
-    //         });
-    //     event.preventDefault();
-    // }
     return (
         <div className="container"
         style={{

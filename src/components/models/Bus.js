@@ -1,4 +1,5 @@
 class Bus{
+    busId;
     busName;
     driverName;
     busType;

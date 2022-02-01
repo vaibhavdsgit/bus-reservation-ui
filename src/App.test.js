@@ -4,6 +4,11 @@ import EmpData from './components/EmpData';
 import SpringBootData from './components/SpringBootData';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import BusData from './components/BusData';
+import AdminData from './components/AdminData';
+import RouteData from './components/RouteData';
+import ReservationData from './components/ReservationData';
+import FeedbackData from './components/FeedbackData';
 
 // Website https://jestjs.io/ 
 // learning resources https://jestjs.io/docs/getting-started  
@@ -37,10 +42,12 @@ beforeEach(() => {
   console.log('beforreEach');
 });
 
-// positive test case 
-test('render Data from Hello', () => {
-  render(<Hello />);
-  const linkElement = screen.getByText(/Data from backend/);
+test('render Data from AdminData', () => {
+  render(
+    <Provider store={store} >
+      <AdminData />
+    </Provider>);
+  const linkElement = screen.getByText('Admin Login');
   expect(linkElement).toBeInTheDocument();
 });
 
@@ -48,32 +55,50 @@ test('render Data from Hello', () => {
 test('render Data from EmpData', () => {
   render(
     <Provider store={store} >
-      <EmpData />
+      <FeedbackData />
     </Provider>);
-  const linkElement = screen.getByText('Employee Component');
+  const linkElement = screen.getByText('delete Feedback by FeedbackId');
   expect(linkElement).toBeInTheDocument();
 });
 
 
 // positive test case 
-test('render Data from SpringBootData', () => {
+test('render Data from BusData', () => {
   render(
     <Provider store={store} >
-      <SpringBootData />
+      <BusData />
     </Provider>);
-  const linkElement = screen.getByText('Get All Employees');
+  const linkElement = screen.getByText('Add New Bus');
+  expect(linkElement).toBeInTheDocument();
+});
+
+test('render Data from ReservationData', () => {
+  render(
+    <Provider store={store} >
+      <ReservationData />
+    </Provider>);
+  const linkElement = screen.getByText('Add New Reservation');
+  expect(linkElement).toBeInTheDocument();
+});
+
+test('render Data from RouteData', () => {
+  render(
+    <Provider store={store} >
+      <RouteData />
+    </Provider>);
+  const linkElement = screen.getByText('Route Data');
   expect(linkElement).toBeInTheDocument();
 });
 
 // negative test case 
-test('render Data from SpringBootData', () => {
-  render(
-    <Provider store={store} >
-      <SpringBootData />
-    </Provider>);
-  const linkElement = screen.findByText();
-  expect(linkElement).not.toBe('Some other text which is not present in the component.');
-});
+// test('render Data from SpringBootData', () => {
+//   render(
+//     <Provider store={store} >
+//       <SpringBootData />
+//     </Provider>);
+//   const linkElement = screen.findByText();
+//   expect(linkElement).not.toBe('Some other text which is not present in the component.');
+// });
 
 
 
